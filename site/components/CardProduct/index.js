@@ -25,13 +25,13 @@ const CardProduct = ({ product }) => {
       </div>
       <div className='mt-4 '>
         <h3 className='text-gray-500text-xs tracking-widest title-font mb-1 '>
-          {product.brand.name}
+          {product.brand.name }
         </h3>
         <h2 className='text-gray-900 title-font text-lg font-medium'>
-          <Link href={`/produto/${product.slug}`}>{product.name}</Link>
+          <Link href={`/produto/${product.slug}`}>{product.name + ' '+ product.color.colorName}</Link>
         </h2>
         <p className='mt-1 text-green-700 text-lg font-medium'>
-          R$ {product.variations[0].price.toLocaleString('pt-br')}
+          R$ {product.price.toLocaleString('en-us')}
         </p>
       </div>
     </div>

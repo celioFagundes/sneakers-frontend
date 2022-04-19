@@ -43,9 +43,9 @@ const CartPreview = () => {
     <div>
       <div
         onClick={() => setCartOpen(!cartOpen)}
-        className='bg-blue-100 text-blue-900 px-2 py-2 rounded-full hover:bg-blue-300 hover:text-white hover:cursor-pointer relative'
+        className='hover:bg-gray-100 text-primary px-2 py-2 rounded-full hover:text-black hover:cursor-pointer relative'
       >
-        <AiOutlineShoppingCart />
+        <AiOutlineShoppingCart size={28}/>
         {cart && cart.cartSize > 0 && (
           <div
             className='absolute bottom-5 -right-1 bg-orange-400 text-xs text-white'
