@@ -5,6 +5,7 @@ import '../components/Carousel/carousel.css'
 
 
 const App = ({ Component, pageProps }) => {
+  
   return (
     <CartProvider>
       <Component {...pageProps} />

@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
 import Footer from '../Footer'
 import Header from '../Header'
 
 const Layout = ({ children, categories , brands}) => {
+  
   return (
     <div className='flex flex-col justify-between  min-h-screen bg-slate-100'>
       <Header categories={categories} brands = {brands} />
