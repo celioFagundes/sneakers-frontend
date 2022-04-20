@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-const Seo = ({title = 'DevShop',description = 'Compre artigos eletrônicos agora'}) => {
+const Seo = ({title = 'Sneakers',description = 'All the best shoes and sneakers'}) => {
   return (
     <Head>
         <title>{title}</title>

@@ -14,9 +14,16 @@ module.exports = {
         button: '#EDAE49',
         input: '#30638E',
       },
-      fontFamily:{
-        'kumbh-sans': ['"Kumbh Sans"', 'sans-serif']
-      }
+      fontFamily: {
+        'kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
+      },
+      height: {
+        '450': '450px',
+      },
+      lineHeight: {
+        'extra-loose': '2.5',
+        12: '3rem',
+      },
     },
   },
   plugins: [],

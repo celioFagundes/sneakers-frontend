@@ -7,6 +7,9 @@ import Products from '../components/Home/Products'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SiAdidas, SiNike } from 'react-icons/si'
+import Intro from '../components/Home/Intro'
+import AdKD14 from '../components/Home/AdKD14'
+import Categories from '../components/Home/Categories'
 const GET_ALL_PRODUCTS = gql`
   query {
     products: getAllProducts {
@@ -49,31 +52,9 @@ const Index = ({ brands, categories, products }) => {
     <>
       <Layout categories={categories} brands={brands}>
         <Seo />
-        <div className='relative'>
-          <Image
-            alt='link para categoria smartphone'
-            src={'/images/intro.jpg'}
-            layout='responsive'
-            width={100}
-            height={45}
-            priority
-          />
-          <div className='absolute top-0 flex flex-col items-start justify-center bg-black bg-opacity-70 h-full w-full px-20'>
-            <Link href={'#'}>
-              <div className='flex items-center justify-start  bg-black bg-opacity-70 w-fit text-white text-lg font-bold pl-5 pr-28 border border-gray-400 py-2 my-4 hover:bg-white hover:text-black transition-all hover:cursor-pointer'>
-                <SiAdidas className='mr-4' size={28}/>
-                <a className='font-kumbh-sans'>SHOP ADIDAS</a>
-              </div>
-            </Link>
-            <Link href={'#'}>
-              <div className='flex items-center justify-start bg-black bg-opacity-70 w-max text-white text-lg font-bold pl-5 pr-28 border border-gray-400 py-2 hover:bg-white hover:text-black transition-all hover:cursor-pointer'>
-                <SiNike className='mr-4' size={28}/>
-                <a className='font-kumbh-sans'>SHOP NIKE</a>
-              </div>
-            </Link>
-          </div>
-        </div>
-        <Products products={products} />
+        <Intro />
+        <AdKD14/>
+        <Categories/>
         <Brands brands={brands} />
       </Layout>
     </>
