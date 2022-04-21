@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .categories-scrollbar::-webkit-scrollbar {
-    height:10px;
+    height:8px;
     border-radius: 10px;
 }
 .categories-scrollbar::-webkit-scrollbar-thumb {

@@ -6,32 +6,32 @@ import useWindowDimensions from '../../lib/useWindowsDimensions'
 const categories = [
   {
     title: 'Sneakers',
-    desktopImg: '/images/desktop/image-deep-earth.jpg',
-    mobileImg: '/images/mobile/image-deep-earth.jpg',
+    desktopImg: '/images/sneaker-cat.jpg',
+    mobileImg: '/images/sneaker-cat.jpg',
   },
   {
     title: 'Basketball',
-    desktopImg: '/images/desktop/image-night-arcade.jpg',
-    mobileImg: '/images/mobile/image-night-arcade.jpg',
+    desktopImg: '/images/intro-nike-2.jpg',
+    mobileImg: '/images/intro-nike-2.jpg',
   },
   {
     title: 'Soccer',
-    desktopImg: '/images/desktop/image-soccer-team.jpg',
+    desktopImg: '/images/soccer-cat-4.jpg',
     mobileImg: '/images/mobile/image-soccer-team.jpg',
   },
   {
     title: 'Skateboarding',
-    desktopImg: '/images/desktop/image-grid.jpg',
+    desktopImg: '/images/skate-cat.webp',
     mobileImg: '/images/mobile/image-grid.jpg',
   },
   {
     title: 'Running',
-    desktopImg: '/images/desktop/image-from-above.jpg',
+    desktopImg: '/images/running-cat.jpg',
     mobileImg: '/images/mobile/image-from-above.jpg',
   },
   {
     title: 'Training & Gym',
-    desktopImg: '/images/desktop/image-pocket-borealis.jpg',
+    desktopImg: '/images/training-cat.jpg',
     mobileImg: '/images/mobile/image-pocket-borealis.jpg',
   },
 ]
@@ -51,6 +51,7 @@ const Categories = () => {
                 src={width > 620 ? category.desktopImg : category.mobileImg}
                 alt={category.title}
                 layout='fill'
+                objectFit='cover'
               />
             </figure>
             <div className='absolute h-full w-full top-0 left-0 bg-darkBlack bg-opacity-10 '>

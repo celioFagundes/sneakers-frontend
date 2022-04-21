@@ -55,9 +55,9 @@ const Intro = () => {
         <div
           className='
             h-full w-full 
-            
             absolute top-0 flex flex-col items-start justify-end 
             pb-40 px-20
+            transition-all
             bg-black bg-opacity-70 
             hover:bg-opacity-40 hover:cursor-pointer
             '
