@@ -1,6 +1,6 @@
 import '../css/styles.css'
 import { CartProvider } from '../lib/CartContext'
-import '../components/Carousel/carousel.css'
+import '../components/CarouselSingle/carousel.css'
 
 
 

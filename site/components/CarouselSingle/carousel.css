@@ -1,7 +1,5 @@
 .embla {
     position: relative;
-    background-color: #f7f7f7;
-    max-width: 670px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -26,7 +24,7 @@
     -webkit-touch-callout: none;
     -khtml-user-select: none;
     -webkit-tap-highlight-color: transparent;
-    padding: 10px;
+
     margin-left: -10px;
   }
   
@@ -40,19 +38,20 @@
   .embla__slide__inner {
     position: relative;
     overflow: hidden;
-    height: 400px;
+    height: 600px;
   }
   
   .embla__slide__img {
     position: absolute;
     display: block;
-    top: 50%;
-    left: 50%;
-    width: auto;
-    height: 100%;
-    min-width: 7%;
-    max-width: none;
-    transform: translate(-50%, -50%);
+    top: 50% !important;
+    left: 50% !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-width: 7% !important; 
+    inset: 50% 50% -50%  !important;
+    max-width: none !important;
+    transform: translate(-50%, -50%) !important;
   }
   
   .embla--thumb {
@@ -87,17 +86,18 @@
   
   .embla__slide__thumbnail {
     position: absolute;
-    opacity: 0.2;
-    top: 0;
-    bottom: 0;
-    left: -10000%;
-    right: -10000%;
+    opacity: 0.4;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: -10000% !important;
+    right: -10000% !important;
     margin: auto;
-    min-width: 600%;
-    height: 800%;
-    max-width: none;
-    transform: scale(0.1);
-    transition: opacity 0.2s;
+    min-width: 600% !important;
+    height: 800% !important;
+    max-height: none !important;
+    max-width: none  !important;
+    transform: scale(0.1) !important;
+    transition: opacity 0.2s !important;
   }
   @media(max-width: 500px){
    

@@ -2,24 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { SiNike } from 'react-icons/si'
+import Carousel from '../CarouselSingle/CarouselSingle'
 
+const images = ['/images/KD14-homepage.webp','/images/KD14-homepage-2.webp','/images/KD14-homepage-3.webp','/images/KD14-homepage-4.webp','/images/KD14-homepage-5.webp']
 const AdKD14 = () => {
   return (
-    <div className='container mx-auto relative w-full h-fit  my-20 py-10'>
-      <Image
-        alt='Go to nike page'
-        src={'/images/KD14-homepage.webp'}
-        layout='responsive'
-        width={100}
-        height={50}
-        objectFit='cover'
-        priority
-      />
+    <div className='container mx-auto relative w-full h-fit  my-20'>
+      <Carousel slides = {images}/>
       <div
         className=' 
             h-full w-full 
             absolute top-0 flex flex-col items-start justify-start
-            pt-24 px-20
+            pt-16 px-20
             transition-all
             bg-black bg-opacity-10 
             hover:cursor-pointer

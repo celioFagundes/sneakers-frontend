@@ -10,6 +10,7 @@ import { SiAdidas, SiNike } from 'react-icons/si'
 import Intro from '../components/Home/Intro'
 import AdKD14 from '../components/Home/AdKD14'
 import Categories from '../components/Home/Categories'
+import NikeEssentials from '../components/Home/NikeEssentials'
 const GET_ALL_PRODUCTS = gql`
   query {
     products: getAllProducts {
@@ -55,6 +56,7 @@ const Index = ({ brands, categories, products }) => {
         <Intro />
         <AdKD14/>
         <Categories/>
+        <NikeEssentials/>
         <Brands brands={brands} />
       </Layout>
     </>

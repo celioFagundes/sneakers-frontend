@@ -190,7 +190,7 @@ const Products = () => {
                         <div className='flex items-center'>
                           <div>
                             <div className='text-sm leading-5 font-medium text-lightGray'>
-                              {item.name + item.color.colorName}
+                              {item.name + ' ' + item.color.colorName}
                             </div>
                             <div className='text-sm leading-5 text-lightGray  max-w-xs overflow-hidden truncate'>
                               {item.description}
