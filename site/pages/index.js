@@ -11,6 +11,8 @@ import Intro from '../components/Home/Intro'
 import AdKD14 from '../components/Home/AdKD14'
 import Categories from '../components/Home/Categories'
 import NikeEssentials from '../components/Home/NikeEssentials'
+import AdidasWomen from '../components/Home/AdidasWomen'
+import Banner from '../components/Home/Banner'
 const GET_ALL_PRODUCTS = gql`
   query {
     products: getAllProducts {
@@ -55,9 +57,9 @@ const Index = ({ brands, categories, products }) => {
         <Seo />
         <Intro />
         <AdKD14/>
+        <AdidasWomen/>
         <Categories/>
-        <NikeEssentials/>
-        <Brands brands={brands} />
+        <Banner/>
       </Layout>
     </>
   )

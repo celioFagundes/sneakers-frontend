@@ -43,7 +43,7 @@ const CartPreview = () => {
     <div>
       <div
         onClick={() => setCartOpen(!cartOpen)}
-        className='hover:bg-gray-100 text-primary px-2 py-2 rounded-full hover:text-black hover:cursor-pointer relative'
+        className='hover:bg-gray-100 text-darkBlack px-2 py-2 rounded-full hover:text-black hover:cursor-pointer relative'
       >
         <AiOutlineShoppingCart size={28}/>
         {cart && cart.cartSize > 0 && (

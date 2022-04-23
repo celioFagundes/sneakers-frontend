@@ -1,26 +1,49 @@
-import { RiShoppingBag3Fill } from 'react-icons/ri'
+import { AiFillFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 
 const Footer = () => {
   return (
-    <footer className='text-white body-font bg-blue-800'>
-      <div className='container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col'>
-        <a className='flex title-font font-medium items-center md:justify-start justify-center text-white'>
-        <div className='bg-blue-500 px-2 py-2 rounded-full'>
-            <RiShoppingBag3Fill color='#fff' size={22} />
+    <footer className='bg-lightBlack py-10'>
+      <div className='md:container mx-auto flex flex-col md:flex-row  items-center justify-center md:justify-between'>
+        <div >
+          <figure className='mb-10 w-full flex justify-center md:justify-start'>
+            <img src={'/logo-white.svg'} alt='sneakers'/>
+          </figure>
+          <nav>
+            <ul className='flex flex-col md:flex-row items-center justify-between'>
+              <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2 flex items-center'>
+                <FaMapMarkerAlt className='mr-2'/>
+                <a href='#'>USA</a>
+              </li>
+              <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
+                <a href='#'>Privacy polices</a>
+              </li>
+              <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
+                <a href='#'>Terms and conditions</a>
+              </li>
+              <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
+                <a href='#'>Products</a>
+              </li>
+              <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
+                <a href='#'>Support</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className=''>
+          <div className='flex items-center justify-center md:justify-start pb-10'>
+            <a href='#' className='mr-3'>
+              <AiFillFacebook color='#fff' size={22} />
+            </a>
+            <a href='#' className='mr-3'>
+              <AiOutlineTwitter color='#fff' size={22} />
+            </a>
+            <a href='#'>
+              <AiOutlineInstagram color='#fff' size={22} />
+            </a>
           </div>
-          <span className='ml-3 text-xl'>DevShop</span>
-        </a>
-        <p className='text-sm text-white sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4'>
-          © {new Date().getFullYear()} DevShop
-        </p>
-        <span className='inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start'>
-          <a className='text-gray-500'>
-            
-          </a>
-          <a className='ml-3 text-gray-500'>
-          
-          </a>
-        </span>
+          <p className='text-lightGray text-xs uppercase font-kumbh-sans'> © 2022 Sneakers. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   )

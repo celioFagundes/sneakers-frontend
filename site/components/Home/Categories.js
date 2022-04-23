@@ -6,33 +6,33 @@ import useWindowDimensions from '../../lib/useWindowsDimensions'
 const categories = [
   {
     title: 'Sneakers',
-    desktopImg: '/images/sneaker-cat.jpg',
-    mobileImg: '/images/sneaker-cat.jpg',
+    img: '/images/sneaker-cat.jpg',
+  
   },
   {
     title: 'Basketball',
-    desktopImg: '/images/intro-nike-2.jpg',
-    mobileImg: '/images/intro-nike-2.jpg',
+    img: '/images/intro-nike-2.jpg',
+   
   },
   {
     title: 'Soccer',
-    desktopImg: '/images/soccer-cat-4.jpg',
-    mobileImg: '/images/mobile/image-soccer-team.jpg',
+    img: '/images/soccer-cat-4.jpg',
+ 
   },
   {
     title: 'Skateboarding',
-    desktopImg: '/images/skate-cat.webp',
-    mobileImg: '/images/mobile/image-grid.jpg',
+    img: '/images/skate-cat.webp',
+   
   },
   {
     title: 'Running',
-    desktopImg: '/images/running-cat.jpg',
-    mobileImg: '/images/mobile/image-from-above.jpg',
+    img: '/images/running-cat.jpg',
+  
   },
   {
     title: 'Training & Gym',
-    desktopImg: '/images/training-cat.jpg',
-    mobileImg: '/images/mobile/image-pocket-borealis.jpg',
+    img: '/images/training-cat.jpg',
+   
   },
 ]
 const Categories = () => {
@@ -40,15 +40,15 @@ const Categories = () => {
 
   return (
     <section className='container mx-auto my-10 '>
-      <h2 className='uppercase font-kumbh-sans text-3xl text-darkBlack mb-4'>
+      <h2 className='text-center md:text-left uppercase font-kumbh-sans text-3xl text-darkBlack mb-4'>
         All categories
       </h2>
-      <div className='categories-scrollbar flex  items-center justify-start overflow-x-scroll' >
+      <div className='categories-scrollbar flex flex-wrap md:flex-nowrap items-center justify-start md:overflow-x-scroll' >
         {categories.map((category, index) => (
-          <div key={index} className='relative mr-16 mb-5 h-full w-full'>
-            <figure className='relative h-450 w-64'>
+          <div key={index} className='relative md:mr-16 mb-5 h-full w-full'>
+            <figure className='relative h-40 md:h-450  w-full md:w-64'>
               <Image
-                src={width > 620 ? category.desktopImg : category.mobileImg}
+                src={category.img}
                 alt={category.title}
                 layout='fill'
                 objectFit='cover'

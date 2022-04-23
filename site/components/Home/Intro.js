@@ -5,8 +5,8 @@ import { SiAdidas, SiNike } from 'react-icons/si'
 
 const Intro = () => {
   return (
-    <div className='relative flex items-center justify-center w-screen h-screen '>
-      <div className='relative w-1/2 h-full bg-black '>
+    <div className='relative flex items-center flex-col md:flex-row  justify-center w-full md:w-screen h-screen'>
+      <div className='relative  w-full md:w-1/2 h-full '>
         <Image
           alt='Go to nike page'
           src={'/images/intro-nike-3.jpg'}
@@ -17,15 +17,16 @@ const Intro = () => {
         <div
           className=' 
             h-full w-full 
-            absolute top-0 flex flex-col items-start justify-end 
-            pb-40 px-20
+            absolute top-0 flex flex-col 
+             items-center justify-center md:items-start md:justify-end 
+            md:pb-40 px-20
             transition-all
             bg-black bg-opacity-70 
             hover:bg-opacity-10 hover:cursor-pointer
             '
         >
           <p className='text-white text-3xl uppercase font-kumbh-sans  mb-4'>
-            Latest nike shoes
+            Nike collection
           </p>
           <Link href={'#'}>
             <div
@@ -44,7 +45,7 @@ const Intro = () => {
           </Link>
         </div>
       </div>
-      <div className='w-1/2 h-full relative'>
+      <div className='w-full md:w-1/2 h-full relative'>
         <Image
           alt='Go to adidas page'
           src={'/images/intro-adidas.jpg'}
@@ -55,15 +56,16 @@ const Intro = () => {
         <div
           className='
             h-full w-full 
-            absolute top-0 flex flex-col items-start justify-end 
-            pb-40 px-20
+            absolute top-0 flex flex-col 
+            items-center justify-center md:items-start md:justify-end 
+            md:pb-40 px-20
             transition-all
             bg-black bg-opacity-70 
             hover:bg-opacity-40 hover:cursor-pointer
             '
         >
           <p className='text-white text-3xl uppercase font-kumbh-sans  mb-4'>
-            Latest adidas shoes
+            adidas collection{' '}
           </p>
           <Link href={'#'}>
             <div
