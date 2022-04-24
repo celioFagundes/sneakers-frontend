@@ -105,7 +105,7 @@ const Header = ({ categories, brands }) => {
             )}
             <Link href='/'>
               <a className='ml-4 flex title-font font-medium items-center text-gray-900 '>
-                <img src='logo.svg' />
+                <img src='/logo.svg' />
               </a>
             </Link>
           </div>

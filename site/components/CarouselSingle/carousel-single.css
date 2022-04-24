@@ -1,24 +1,24 @@
-.embla {
+.embla-single {
     position: relative;
     margin-left: auto;
     margin-right: auto;
   }
   
-  .embla__viewport {
+  .embla__viewport-single {
     overflow: hidden;
     width: 100%;
   }
   
-  .embla__viewport.is-draggable {
+  .embla__viewport-single.is-draggable {
     cursor: move;
     cursor: grab;
   }
   
-  .embla__viewport.is-dragging {
+  .embla__viewport-single.is-dragging {
     cursor: grabbing;
   }
   
-  .embla__container {
+  .embla__container-single {
     display: flex;
     user-select: none;
     -webkit-touch-callout: none;
@@ -28,20 +28,20 @@
     margin-left: -10px;
   }
   
-  .embla__slide {
+  .embla__slide-single {
     flex:0 0 50px;
     padding-left: 10px;
     min-width: 100%;
     position: relative;
   }
   
-  .embla__slide__inner {
+  .embla__slide__inner-single {
     position: relative;
     overflow: hidden;
     height: 600px;
   }
   
-  .embla__slide__img {
+  .embla__slide__img-single {
     position: absolute;
     display: block;
     top: 50% !important;
@@ -52,25 +52,6 @@
     inset: 50% 50% -50%  !important;
     max-width: none !important;
     transform: translate(-50%, -50%) !important;
-  }
-  
-  .embla--thumb {
-    padding-top: 0;
-    margin-top: -12px;
-  }
-  
-
-  @media(max-width: 768px){
-   
-    
-    .embla__slide__inner{
-      
-      max-width: wh;
-    }
-    .embla--thumb{
-      display: none;
-    }
-  
   }
 
   

@@ -1,10 +1,9 @@
 import { useState, useEffect, useCallback } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
-import { Thumb } from './Thumb'
 import Image from 'next/image'
 import Autoplay from 'embla-carousel-autoplay'
 
-const Carousel = ({ slides, productName }) => {
+const CarouselSingle = ({ slides, productName }) => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const options = { delay: 4000 } // Options
   const autoplayRoot = emblaRoot => emblaRoot.parentElement // Root node
@@ -23,15 +22,15 @@ const Carousel = ({ slides, productName }) => {
   }, [slides])
   return (
     <>
-      <div className='embla '>
-        <div className='embla__viewport' ref={mainViewportRef}>
-          <div className='embla__container '>
+      <div className='embla-single '>
+        <div className='embla__viewport-single' ref={mainViewportRef}>
+          <div className='embla__container-single '>
             {slides ? (
               slides.map((item, index) => (
-                <div className='embla__slide' key={index}>
-                  <div className='embla__slide__inner'>
+                <div className='embla__slide-single' key={index}>
+                  <div className='embla__slide__inner-single'>
                     <Image
-                      className='embla__slide__img'
+                      className='embla__slide__img-single'
                       src={item}
                       alt={productName}
                       objectFit ='cover'
@@ -42,10 +41,10 @@ const Carousel = ({ slides, productName }) => {
                 </div>
               ))
             ) : (
-              <div className='embla__slide'>
-                <div className='embla__slide__inner'>
+              <div className='embla__slide-single'>
+                <div className='embla__slide__inner-single'>
                   <Image
-                    className='embla__slide__img'
+                    className='embla__slide__img-single'
                     src='https://dummyimage.com/420x260'
                     alt={productName}
                     layout='fill'
@@ -61,4 +60,4 @@ const Carousel = ({ slides, productName }) => {
   )
 }
 
-export default Carousel
+export default CarouselSingle
