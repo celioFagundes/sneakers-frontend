@@ -10,8 +10,8 @@ const AdidasWomen = ({adidasWomenShoes}) => {
         Adidas for Women
       </h2>
       <div className=' flex flex-wrap lg:flex-nowrap items-center justify-start' >
-        {adidasWomenShoes.map((item, index) => (
-          <CardProduct item = {item} index = {index} />
+        {adidasWomenShoes.map((item) => (
+          <CardProduct item = {item}  key = {item.slug} />
         ))}
       </div>
     </section>

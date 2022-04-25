@@ -18,7 +18,10 @@ module.exports = {
         'kumbh-sans': ['"Kumbh Sans"', 'sans-serif'],
       },
       height: {
-        '450': '450px',
+        450: '450px',
+      },
+      width: {
+        420: '420px',
       },
       lineHeight: {
         'extra-loose': '2.5',

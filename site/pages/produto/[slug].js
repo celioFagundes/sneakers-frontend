@@ -130,8 +130,14 @@ const Products = ({ product, categories, brands }) => {
       const { simiProducts } = await fetcher(GET_PRODUCTS_BY_CATEGORY_LIMITED, {
         categorySlug: product.category.slug,
       })
-      setColorAlternatives(differentColorShoes)
-      setSimilarProducts(simiProducts)
+      const filterDifColorShoes = differentColorShoes.filter(
+        item => item.color.colorName !== product.color.colorName,
+      )
+      const filterSimiProduct = simiProducts.filter(
+        item => item.name !== product.name,
+      )
+      setColorAlternatives(filterDifColorShoes)
+      setSimilarProducts(filterSimiProduct)
     }
     getColorAlternatives()
   }, [product])
@@ -199,12 +205,12 @@ const Products = ({ product, categories, brands }) => {
   return (
     <Layout categories={categories} brands={brands}>
       {selectedVariation && (
-        <div className='container text-center sm:text-left lg:px-5 pt-28 mx-auto'>
+        <div className='text-center lg:text-left lg:px-5 pt-28 mx-auto'>
           <div className='flex flex-wrap '>
             <div className='w-full lg:w-1/2'>
               <Carousel slides={product.images} />
             </div>
-            <div className='lg:w-1/2 w-full px-2 lg:pl-10 lg:py-2  mt-6 lg:mt-0 border-b-2 border-gray-200 text-center lg:text-start'>
+            <div className='lg:w-1/2 w-full px-2 lg:pl-10 lg:py-2  mt-6 lg:mt-0 border-b-2 border-gray-200 '>
               <h2 className='text-md uppercase font-kumbh-sans  text-gray-500 tracking-widest'>
                 {product.gender +
                   ' / ' +
@@ -216,25 +222,31 @@ const Products = ({ product, categories, brands }) => {
                 {product.name + ' ' + product.color.colorName}
               </h1>
               <div className=' static flex flex-row items-center justify-center lg:justify-start'>
-                {colorAlternatives.map(alternative => (
-                  <div key={alternative.slug} className='static   w-20 mr-5 px-2 lg:px-0'>
-                    <p className='text-xs italic '>
-                      {alternative.color.colorName}
-                    </p>
-                    <Link href={`/produto/${alternative.slug}`}>
-                      <div className='border border-transparent hover:border-darkBlack transition-all cursor-pointer rounded-xs shadow'>
-                        <Image
-                          src={alternative.images[0]}
-                          layout='responsive'
-                          alt={alternative.color.colorName}
-                          height={10}
-                          width={10}
-                          objectFit='cover'
-                        />
+                {colorAlternatives.map(
+                  alternative =>
+                    alternative.color.colorName !== product.color.colorName && (
+                      <div
+                        key={alternative.slug}
+                        className='static   w-20 mr-5 px-2 lg:px-0'
+                      >
+                        <p className='text-xs italic '>
+                          {alternative.color.colorName}
+                        </p>
+                        <Link href={`/produto/${alternative.slug}`}>
+                          <div className='border border-transparent hover:border-darkBlack transition-all cursor-pointer rounded-xs shadow'>
+                            <Image
+                              src={alternative.images[0]}
+                              layout='responsive'
+                              alt={alternative.color.colorName}
+                              height={10}
+                              width={10}
+                              objectFit='cover'
+                            />
+                          </div>
+                        </Link>
                       </div>
-                    </Link>
-                  </div>
-                ))}
+                    ),
+                )}
               </div>
               <div className=' mt-2 items-center '>
                 <div className='flex flex-col my-2'>
@@ -329,16 +341,18 @@ const Products = ({ product, categories, brands }) => {
               </p>
             </div>
           </section>
-          <section className='container mx-auto mb-10 '>
-            <h2 className='text-center md:text-left uppercase font-kumbh-sans text-3xl text-darkBlack mb-4'>
-              You may also like
-            </h2>
-            <div className=' flex flex-wrap lg:flex-nowrap items-center justify-start'>
-              {similarProducts.map((item, index) => (
-                <CardProduct item={item} index={index} />
-              ))}
-            </div>
-          </section>
+          {similarProducts.length > 0 && (
+            <section className='mx-auto mb-10 h-full'>
+              <h2 className='text-center md:text-left uppercase font-kumbh-sans text-3xl text-darkBlack mb-4'>
+                You may also like
+              </h2>
+              <div className='categories-scrollbar flex flex-wrap md:flex-nowrap items-center justify-start md:overflow-x-scroll h-full'>
+                {similarProducts.map(item => (
+                  <CardProduct item={item} key={item.slug} />
+                ))}
+              </div>
+            </section>
+          )}
         </div>
       )}
     </Layout>

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-const CardProduct = ({ item, index}) => {
+const CardProduct = ({ item}) => {
   return (
-    <div key={index} className='relative  mb-5 h-full w-full mr-0 lg:w-1/3 lg:mr-2 '>
-      <figure className='relative h-450 w-full'>
+    <div  className='relative  mb-5  w-full lg:w-420 mr-0   lg:mr-2 '>
+      <figure className='relative h-450 w-full lg:w-420 '>
         <Image
           src={item.images[0]}
           alt={item.name}
@@ -13,7 +13,7 @@ const CardProduct = ({ item, index}) => {
       </figure>
       <div className='absolute h-full w-full top-0 left-0 bg-darkBlack bg-opacity-5 '></div>
       <div className=' absolute -bottom-5 left-0 w-full'>
-        <Link href={'#'}>
+        <Link href={`/produto/${item.slug}`}>
           <div
             className='
                 w-full

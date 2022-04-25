@@ -61,6 +61,7 @@ const GET_ALL_PRODUCTS_BY_BRAND_AND_GENDER = gql`
       name
       slug
       price
+      
       brand {
         name
       }
