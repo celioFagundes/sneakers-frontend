@@ -1,5 +1,7 @@
 .embla-single {
     position: relative;
+    padding: 100px;
+    background-color: #f6f6f6;
     margin-left: auto;
     margin-right: auto;
   }
@@ -54,4 +56,8 @@
     transform: translate(-50%, -50%) !important;
   }
 
-  
+  @media(max-width:768px){
+    .embla-single{
+      padding: 0;
+    }
+  }

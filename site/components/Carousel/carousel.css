@@ -32,7 +32,6 @@
   
   .embla__slide {
     flex:0 0 50px;
-    padding-left: 10px;
     min-width: 100%;
     position: relative;
   }
@@ -41,6 +40,7 @@
     position: relative;
     overflow: hidden;
     height: 400px;
+    background: #000;
   }
   
   .embla__slide__img {
@@ -48,7 +48,8 @@
     display: block;
     top: 50% !important;
     left: 50% !important;
-    width: auto !important;
+    width: 100% !important;
+
     height: 100% !important;
     min-width: 7% !important; 
     inset: 50% 50% -50%  !important;

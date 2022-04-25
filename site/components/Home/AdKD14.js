@@ -16,7 +16,7 @@ const AdKD14 = () => {
             items-center justify-start md:items-start md:justify-start
             pt-7 md:pt-16  px-10 md:px-20
             transition-all
-            bg-black bg-opacity-10 
+            
             hover:cursor-pointer
             '
       >

@@ -49,6 +49,7 @@ const Carousel = ({ slides , productName}) => {
                       src={item}
                       alt= {productName}
                       layout ='fill'
+                      objectFit='cover'
                       priority      
                     />
                   </div>

@@ -2,17 +2,13 @@ import Layout from '../components/Layout'
 import Seo from '../components/Seo'
 import { fetcher } from '../lib/graphql'
 import { gql } from 'graphql-request'
-import Brands from '../components/Home/Brands'
-import Products from '../components/Home/Products'
-import Link from 'next/link'
-import Image from 'next/image'
-import { SiAdidas, SiNike } from 'react-icons/si'
+
 import Intro from '../components/Home/Intro'
 import AdKD14 from '../components/Home/AdKD14'
 import Categories from '../components/Home/Categories'
 import NikeEssentials from '../components/Home/NikeEssentials'
 import AdidasWomen from '../components/Home/AdidasWomen'
-import Banner from '../components/Home/Banner'
+
 const GET_ALL_PRODUCTS = gql`
   query {
     products: getAllProducts {
@@ -50,16 +46,58 @@ const GET_ALL_CATEGORIES = gql`
     }
   }
 `
-const Index = ({ brands, categories, products }) => {
+const GET_ALL_PRODUCTS_BY_BRAND_AND_GENDER = gql`
+  query getProductsByBrandAndGender(
+    $brandSlug: String!
+    $gender: String!
+    $limit: Int!
+  ) {
+    adidasWomen: getProductsByBrandAndGender(
+      brandSlug: $brandSlug
+      gender: $gender
+      limit: $limit
+    ) {
+      id
+      name
+      slug
+      price
+      brand {
+        name
+      }
+      category {
+        name
+      }
+      images
+    }
+  }
+`
+const GET_ALL_PRODUCTS_BY_BRAND_LIMITED = gql`
+  query getProductsByBrandLimited($brandSlug: String!) {
+    nikeEssentials: getProductsByBrandLimited(brandSlug: $brandSlug) {
+      id
+      name
+      slug
+      price
+      brand {
+        name
+      }
+      category {
+        name
+      }
+      images
+    }
+  }
+`
+const Index = ({ brands, categories, nikeEssentials, adidasWomen }) => {
   return (
     <>
       <Layout categories={categories} brands={brands}>
         <Seo />
         <Intro />
-        <AdKD14/>
-        <AdidasWomen/>
-        <Categories/>
-        <Banner/>
+        <AdKD14 />
+        <AdidasWomen adidasWomenShoes={adidasWomen} />
+        <Categories />
+        <NikeEssentials nikeEssentialsShoes={nikeEssentials} />
       </Layout>
     </>
   )
@@ -69,12 +107,21 @@ export async function getServerSideProps(context) {
   const { brands } = await fetcher(GET_ALL_BRANDS)
   const { categories } = await fetcher(GET_ALL_CATEGORIES)
   const { products } = await fetcher(GET_ALL_PRODUCTS)
-
+  const { nikeEssentials } = await fetcher(GET_ALL_PRODUCTS_BY_BRAND_LIMITED, {
+    brandSlug: 'nike',
+  })
+  const { adidasWomen } = await fetcher(GET_ALL_PRODUCTS_BY_BRAND_AND_GENDER, {
+    brandSlug: 'adidas',
+    gender: 'Women',
+    limit: 3,
+  })
   return {
     props: {
       brands,
       categories,
       products,
+      nikeEssentials,
+      adidasWomen,
     },
   }
 }
