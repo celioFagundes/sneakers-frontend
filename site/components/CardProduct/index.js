@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 const CardProduct = ({ item}) => {
   return (
-    <div  className='relative  mb-5  w-full lg:w-420 mr-0   lg:mr-2 '>
-      <figure className='relative h-450 w-full lg:w-420 '>
+    <div  className='relative  mb-10  md:mr-10 '>
+      <figure className='relative h-450 w-full lg:w-96 '>
         <Image
           src={item.images[0]}
           alt={item.name}

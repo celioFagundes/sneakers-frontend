@@ -205,7 +205,7 @@ const Products = ({ product, categories, brands }) => {
   return (
     <Layout categories={categories} brands={brands}>
       {selectedVariation && (
-        <div className='text-center lg:text-left lg:px-5 pt-28 mx-auto'>
+        <div className='text-center lg:text-left lg:px-5  mx-auto'>
           <div className='flex flex-wrap '>
             <div className='w-full lg:w-1/2'>
               <Carousel slides={product.images} />

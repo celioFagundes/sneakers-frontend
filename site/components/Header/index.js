@@ -24,9 +24,18 @@ const Header = ({ categories, brands }) => {
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      const isShow = currPos.y > prevPos.y
-      if (isShow !== hideOnScroll ){ setHideOnScroll(isShow)}
+      if(currPos.y === 0){
+        setHideOnScroll(true)
+      }
+      if(currPos.y < -100){
+        const isShow = currPos.y > prevPos.y
+        if (isShow !== hideOnScroll) {
+          setHideOnScroll(isShow)
+        }
+      }
+      console.log(currPos.y)
     },
+   
     [hideOnScroll],
     false,
     false,
@@ -65,10 +74,13 @@ const Header = ({ categories, brands }) => {
       z-50 
       shadow-md 
 
-      ${hideOnScroll ? 'visible transform-none': 'md:invisible md:-translate-y-full'}`}
+      ${
+        hideOnScroll
+          ? 'visible transform-none'
+          : 'md:invisible md:-translate-y-full'
+      }`}
       style={{
         transition: `all 200ms ${hideOnScroll ? 'ease-in' : 'ease-out'}`,
-      
       }}
     >
       <div className='bg-darkBlack py-2 '>
@@ -119,6 +131,18 @@ const Header = ({ categories, brands }) => {
           bg-white w-1/2 md:w-max h-full
           text-base `}
           >
+            <Link href={'/shoes'}>
+              <a
+                className={`
+                inline-flex items-center  
+                px-2 md:px-4  py-4 md:py-0
+                text-xl md:text-sm 
+                font-bold font-kumbh-sans  uppercase text-center 
+                hover:text-primary`}
+              >
+                All
+              </a>
+            </Link>
             <div className='relative'>
               <button
                 onMouseOver={() => width > 768 && openMenMenu()}
