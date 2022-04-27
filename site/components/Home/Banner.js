@@ -6,7 +6,7 @@ const Banner = () => {
     <div>
       <div className='bg-darkBlack w-full '>
         <div className='container mx-auto py-20 flex items-center justify-center'>
-          <Link href={'#'}>
+          <Link href={'/shoes'}>
             <div
               className='
                 flex items-center justify-start 

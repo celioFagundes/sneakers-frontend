@@ -9,24 +9,6 @@ import Categories from '../components/Home/Categories'
 import NikeEssentials from '../components/Home/NikeEssentials'
 import AdidasWomen from '../components/Home/AdidasWomen'
 
-const GET_ALL_PRODUCTS = gql`
-  query {
-    products: getAllProducts {
-      id
-      name
-      slug
-      price
-      color {
-        colorName
-      }
-      brand {
-        slug
-        name
-      }
-      images
-    }
-  }
-`
 const GET_ALL_BRANDS = gql`
   query {
     brands: getAllBrands {
@@ -61,7 +43,7 @@ const GET_ALL_PRODUCTS_BY_BRAND_AND_GENDER = gql`
       name
       slug
       price
-      
+
       brand {
         name
       }
@@ -107,7 +89,7 @@ const Index = ({ brands, categories, nikeEssentials, adidasWomen }) => {
 export async function getServerSideProps(context) {
   const { brands } = await fetcher(GET_ALL_BRANDS)
   const { categories } = await fetcher(GET_ALL_CATEGORIES)
-  const { products } = await fetcher(GET_ALL_PRODUCTS)
+
   const { nikeEssentials } = await fetcher(GET_ALL_PRODUCTS_BY_BRAND_LIMITED, {
     brandSlug: 'nike',
   })
@@ -120,7 +102,6 @@ export async function getServerSideProps(context) {
     props: {
       brands,
       categories,
-      products,
       nikeEssentials,
       adidasWomen,
     },
