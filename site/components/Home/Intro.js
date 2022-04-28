@@ -5,7 +5,10 @@ import { SiAdidas, SiNike } from 'react-icons/si'
 
 const Intro = () => {
   return (
-    <div className='relative flex items-center flex-col md:flex-row  justify-center w-full md:w-screen h-screen'>
+    <div className='
+      relative 
+      flex items-center flex-col md:flex-row  justify-center 
+      w-full md:w-screen h-screen'>
       <div className='relative  w-full md:w-1/2 h-full '>
         <Image
           alt='Go to nike page'
@@ -18,7 +21,7 @@ const Intro = () => {
           className=' 
             h-full w-full 
             absolute top-0 flex flex-col 
-             items-center justify-center md:items-start md:justify-end 
+            items-center justify-center md:items-start md:justify-end 
             md:pb-40 px-20
             transition-all
             bg-black bg-opacity-70 
@@ -28,7 +31,7 @@ const Intro = () => {
           <p className='text-white text-3xl uppercase font-kumbh-sans  mb-4'>
             Nike collection
           </p>
-          <Link href={'#'}>
+          <Link href={'/shoes?brand=nike'}>
             <div
               className='
                 w-max 
@@ -65,9 +68,9 @@ const Intro = () => {
             '
         >
           <p className='text-white text-3xl uppercase font-kumbh-sans  mb-4'>
-            adidas collection{' '}
+            Adidas Collection{' '}
           </p>
-          <Link href={'#'}>
+          <Link href={'/shoes?brand=adidas'}>
             <div
               className='
                 w-max 

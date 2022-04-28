@@ -1,18 +1,26 @@
-import { AiFillFacebook, AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai'
+import {
+  AiFillFacebook,
+  AiOutlineInstagram,
+  AiOutlineTwitter,
+} from 'react-icons/ai'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 
 const Footer = () => {
   return (
     <footer className='bg-lightBlack py-10'>
-      <div className='md:container mx-auto flex flex-col md:flex-row  items-center justify-center md:justify-between'>
-        <div >
+      <div
+        className='
+      md:container mx-auto 
+      flex flex-col md:flex-row  items-center justify-center md:justify-between'
+      >
+        <div>
           <figure className='mb-10 w-full flex justify-center md:justify-start'>
-            <img src={'/logo-white.svg'} alt='sneakers'/>
+            <img src={'/logo-white.svg'} alt='sneakers' />
           </figure>
           <nav>
             <ul className='flex flex-col md:flex-row items-center justify-between'>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2 flex items-center'>
-                <FaMapMarkerAlt className='mr-2'/>
+                <FaMapMarkerAlt className='mr-2' />
                 <a href='#'>USA</a>
               </li>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
@@ -42,7 +50,10 @@ const Footer = () => {
               <AiOutlineInstagram color='#fff' size={22} />
             </a>
           </div>
-          <p className='text-lightGray text-xs uppercase font-kumbh-sans'> © 2022 Sneakers. All rights reserved.</p>
+          <p className='text-lightGray text-xs uppercase font-kumbh-sans'>
+            {' '}
+            © 2022 Sneakers. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

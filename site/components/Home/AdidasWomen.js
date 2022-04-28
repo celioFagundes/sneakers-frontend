@@ -6,10 +6,13 @@ const AdidasWomen = ({adidasWomenShoes}) => {
  
   return (
     <section className='container mx-auto my-10 '>
-      <h2 className='text-center md:text-left uppercase font-kumbh-sans text-3xl text-darkBlack mb-4'>
+      <h2 className='
+      text-center md:text-left 
+      uppercase font-kumbh-sans text-3xl text-darkBlack 
+      mb-4'>
         Adidas for Women
       </h2>
-      <div className=' flex flex-wrap lg:flex-nowrap items-center justify-start' >
+      <div className='container mx-auto grid  grid-cols-1 md:grid-cols-2 xl:grid-cols-3' >
         {adidasWomenShoes.map((item) => (
           <CardProduct item = {item}  key = {item.slug} />
         ))}

@@ -1,9 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
-const CardProduct = ({ item}) => {
+const CardProduct = ({ item }) => {
   return (
-    <div  className='relative  mb-10  md:mr-10 '>
-      <figure className='relative h-450 w-full lg:w-96 '>
+    <div className='relative  mb-10  md:mr-12 '>
+      <figure className='relative h-450 w-full '>
         <Image
           src={item.images[0]}
           alt={item.name}
@@ -11,9 +11,14 @@ const CardProduct = ({ item}) => {
           objectFit='cover'
         />
       </figure>
-      <div className='absolute h-full w-full top-0 left-0 bg-darkBlack bg-opacity-5 '></div>
+      <div
+        className='
+      absolute top-0 left-0
+      h-full w-full  
+      bg-darkBlack bg-opacity-5'
+      ></div>
       <div className=' absolute -bottom-5 left-0 w-full'>
-        <Link href={`/produto/${item.slug}`}>
+        <Link href={`/shoe/${item.slug}`}>
           <div
             className='
                 w-full
@@ -29,7 +34,7 @@ const CardProduct = ({ item}) => {
           </div>
         </Link>
         <p className='text-sm font-medium font-kumbh-sans uppercase'>
-          {item.brand.name + ' / ' + item.category.name }
+          {item.brand.name + ' / ' + item.category.name}
         </p>
       </div>
     </div>

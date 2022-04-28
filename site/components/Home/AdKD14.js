@@ -4,30 +4,44 @@ import { SiNike } from 'react-icons/si'
 import CarouselSingle from '../CarouselSingle/CarouselSingle'
 
 const images = ['/images/KD14-homepage.webp','/images/KD14-homepage-2.webp','/images/KD14-homepage-3.webp','/images/KD14-homepage-4.webp','/images/KD14-homepage-5.webp']
+
 const AdKD14 = () => {
   return (
-    <div className='md:container mx-auto relative w-full h-max  my-5 md:my-20'>
+    <div className='
+    md:container mx-auto 
+    relative
+    w-full h-max  
+    my-5 md:my-20'>
       <CarouselSingle slides = {images}/>
       <div
         className=' 
-            h-full w-full 
-            absolute top-0 
-            flex flex-col 
-            items-center justify-start md:items-start md:justify-start
-            pt-7 md:pt-16  px-10 md:px-20
-            transition-all
-            
-            hover:cursor-pointer
-            '
+        h-full w-full 
+        absolute top-0 
+        flex flex-col 
+        items-center justify-start md:items-start md:justify-start
+        pt-7 md:pt-16  px-10 md:px-20
+        transition-all
+        hover:cursor-pointer
+        '
       >
-        <p className='text-darkBlack  text-3xl md:text-6xl uppercase font-kumbh-sans  mb-4'>
+        <p className='
+        text-darkBlack uppercase font-kumbh-sans 
+        text-3xl md:text-6xl 
+        mb-4'>
           KD14
         </p>
-        <p className='text-center md:text-justify text-darkBlack text-sm md:text-xl uppercase font-kumbh-sans  mb-4 max-w-none md:max-w-sm'>
+        <p className='
+        max-w-none md:max-w-sm
+        text-center md:text-justify 
+        text-sm md:text-xl 
+        uppercase text-darkBlack
+        font-kumbh-sans  
+        mb-4 
+        '>
           The KD14 is designed to help versatile, relentless players like KD
           feel fresh all game.
         </p>
-        <Link href={'/produto/kd-14-black-lime'}>
+        <Link href={'/shoe/kd-14-black-lime'}>
           <div
             className='
                 w-max 

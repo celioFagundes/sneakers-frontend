@@ -42,7 +42,7 @@ export const CartProvider = ({ children }) => {
     }
   }
   const addToCart = (product, selectedVariation,voltage) => {
-    const variationId = selectedVariation.sku + voltage
+    const variationId = selectedVariation.sku
     const currentCart = JSON.parse(localStorage.getItem('cart'))
     setItems(current => {
       const newCart = { ...currentCart }
@@ -51,9 +51,9 @@ export const CartProvider = ({ children }) => {
         name: product.name,
         slug: product.slug,
         description: product.description,
+        price:product.price,
+        color:product.color,
         images: product.images,
-        sizeType: product.sizeType,
-        voltage: voltage !== '' && voltage,
         variation: selectedVariation,
         qtd: 1,
       }
@@ -65,11 +65,8 @@ export const CartProvider = ({ children }) => {
     const variationId = voltage ? selectedVariationSKU + voltage : selectedVariationSKU
     const currentCart = JSON.parse(localStorage.getItem('cart'))
     const variation = currentCart[variationId]
-    console.log('chamou no context', variation)
     if (variation) {
-      console.log('achou variation')
       if (variation.qtd > 0) {
-        console.log('passou')
         setItems(current => {
           const { [variationId]: etc, ...newCart2 } = currentCart
           localStorage.setItem('cart', JSON.stringify(newCart2))
