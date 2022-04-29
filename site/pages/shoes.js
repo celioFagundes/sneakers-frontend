@@ -109,7 +109,7 @@ const Shoes = ({ products, categories, brands, query }) => {
   }
   return (
     <Layout categories={categories} brands={brands}>
-      <div className='container mx-auto  flex items-center justify-start pt-28'>
+      <div className='container mx-auto  px-5 md:px-0 flex flex-wrap md:flex-nowrap items-center justify-start md:pt-28'>
         <Select
           label='Categories'
           options={categories}

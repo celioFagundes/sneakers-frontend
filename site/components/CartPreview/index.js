@@ -72,9 +72,11 @@ const CartPreview = () => {
           } w-full  sm:w-auto absolute z-50 right-0 sm:right-12 top-24 bg-gray-50 px-3  py-3 rounded shadow-sm`}
         >
           <div className='border-b flex flex-row items-center justify-between py-2'>
-            <p className='text-gray-900 font-medium '>Your cart:</p>
+            <p className='text-gray-900 text-sm font-medium uppercase'>
+              Your cart:
+            </p>
             <Link href='/cart'>
-              <a className='text-blue-600 font-medium text-sm hover:underline px-4  rounded'>
+              <a className='text-blue-800 font-medium text-sm hover:underline px-4  rounded'>
                 Go to cart
               </a>
             </Link>
@@ -116,13 +118,9 @@ const CartPreview = () => {
                     </div>
 
                     <p className='text-gray-400 font-medium text-sm'>
-                      $ {cartDisplayed[item].price.toLocaleString('en-us')} x{' '}
-                      {cartDisplayed[item].qtd}{' '}
+                      ${cartDisplayed[item].price} x{cartDisplayed[item].qtd}{' '}
                       <span className='text-gray-800'>
-                        ${' '}
-                        {(
-                          cartDisplayed[item].price * cartDisplayed[item].qtd
-                        ).toLocaleString('en-us')}
+                        {cartDisplayed[item].price * cartDisplayed[item].qtd}
                       </span>
                     </p>
                   </div>

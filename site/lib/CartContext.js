@@ -79,7 +79,7 @@ export const CartProvider = ({ children }) => {
 
   const cartTotal = () => {
     const total = Object.keys(items).reduce((prev, curr) => {
-      return prev + items[curr].variation.price * items[curr].qtd
+      return prev + items[curr].price * items[curr].qtd
     }, 0)
     return total
   }

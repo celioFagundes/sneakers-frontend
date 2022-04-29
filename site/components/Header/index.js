@@ -25,7 +25,6 @@ const Header = ({ categories, brands }) => {
           setHideOnScroll(isShow)
         }
       }
-      console.log(currPos.y)
     },
 
     [hideOnScroll],

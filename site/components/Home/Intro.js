@@ -22,13 +22,14 @@ const Intro = () => {
             h-full w-full 
             absolute top-0 flex flex-col 
             items-center justify-center md:items-start md:justify-end 
-            md:pb-40 px-20
+            md:pb-40 px-10 sm:px-20
             transition-all
             bg-black bg-opacity-70 
             hover:bg-opacity-10 hover:cursor-pointer
+            text-center
             '
         >
-          <p className='text-white text-3xl uppercase font-kumbh-sans  mb-4'>
+          <p className='text-white sm:text-3xl text-2xl uppercase font-kumbh-sans  mb-4'>
             Nike collection
           </p>
           <Link href={'/shoes?brand=nike'}>
@@ -39,11 +40,13 @@ const Intro = () => {
                 bg-black bg-opacity-70 
                 text-white text-lg font-bold 
                 pl-5 pr-28 
+                
+                
                 border border-gray-400 py-2 
               hover:bg-white hover:text-black transition-all hover:cursor-pointer'
             >
               <SiNike className='mr-4' size={28} />
-              <a className='font-kumbh-sans'>SHOP NIKE</a>
+              <a className='font-kumbh-sans '>SHOP NIKE</a>
             </div>
           </Link>
         </div>
@@ -61,13 +64,15 @@ const Intro = () => {
             h-full w-full 
             absolute top-0 flex flex-col 
             items-center justify-center md:items-start md:justify-end 
-            md:pb-40 px-20
+            md:pb-40 px-10 sm:px-20
             transition-all
+            sm:text-center
             bg-black bg-opacity-70 
             hover:bg-opacity-40 hover:cursor-pointer
+            
             '
         >
-          <p className='text-white text-3xl uppercase font-kumbh-sans  mb-4'>
+          <p className='text-white  sm:text-3xl text-2xl uppercase font-kumbh-sans  mb-4 '>
             Adidas Collection{' '}
           </p>
           <Link href={'/shoes?brand=adidas'}>

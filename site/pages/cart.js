@@ -29,7 +29,7 @@ const Cart = ({ categories, brands }) => {
   
   return (
     <Layout categories={categories} brands={brands}>
-      <div className='flex justify-center my-6'>
+      <div className='flex justify-center my-6 md:pt-28'>
         {Object.keys(cart.items).length > 0 &&
         <div className='flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5'>
           <div className='flex-1'>
@@ -37,17 +37,17 @@ const Cart = ({ categories, brands }) => {
               <thead>
                 <tr className='h-12 uppercase'>
                   <th className='hidden md:table-cell'></th>
-                  <th className='text-left'>Produto</th>
+                  <th className='text-left'>Product</th>
                   <th className='lg:text-right text-left pl-5 lg:pl-0'>
                     <span className='lg:hidden' title='Quantity'>
                       Qtd
                     </span>
-                    <span className='hidden lg:inline'>Quantidade</span>
+                    <span className='hidden lg:inline'>Quantity</span>
                   </th>
                   <th className='hidden text-right md:table-cell'>
-                    Preço unitário
+                    Unit price
                   </th>
-                  <th className='text-right'>Preço total</th>
+                  <th className='text-right'>Total price</th>
                 </tr>
               </thead>
               <tbody>
@@ -80,23 +80,17 @@ const Cart = ({ categories, brands }) => {
                       </Link>
                       <div className='flex items-center justify-start'>
                         <p className='text-gray-500 font-medium text-xs mr-5'>
-                          Cor: {cart.items[item].variation.color.colorName}
+                          Color: {cart.items[item].color.colorName}
                         </p>
-                        {(cart.items[item].sizeType === 'clothes' ||
-                          cart.items[item].sizeType === 'shoes') && (
+                        
                           <p className='text-gray-500 font-medium text-xs mr-5'>
-                            Tamanho: {cart.items[item].variation.size}
+                            Size: {cart.items[item].variation.size}
                           </p>
-                        )}
-                        {cart.items[item].voltage && (
-                          <span className='text-gray-500 font-medium text-xs'>
-                            Voltagem: {cart.items[item].voltage}
-                          </span>
-                        )}
+                     
                       </div>
                       <div>
                         <button type='submit' className='text-gray-700' onClick={() => cart.removeFromCart(item)}>
-                          <small>(Remover item)</small>
+                          <small>(Remove)</small>
                         </button>
                       </div>
                     </td>
@@ -124,19 +118,17 @@ const Cart = ({ categories, brands }) => {
                     </td>
                     <td className='hidden text-right md:table-cell'>
                       <span className='text-sm lg:text-base font-medium'>
-                        R${' '}
-                        {cart.items[item].variation.price.toLocaleString(
-                          'pt-br',
-                        )}
+                        $
+                        {cart.items[item].price}
                       </span>
                     </td>
                     <td className='text-right'>
                       <span className='text-sm lg:text-base font-medium'>
-                        R${' '}
+                        $
                         {(
-                          cart.items[item].variation.price *
+                          cart.items[item].price *
                           cart.items[item].qtd
-                        ).toLocaleString('pt-br')}
+                        )}
                       </span>
                     </td>
                   </tr>
@@ -147,7 +139,7 @@ const Cart = ({ categories, brands }) => {
               <div className='lg:px-2 lg:w-1/2'></div>
               <div className='lg:px-2 lg:w-1/2'>
                 <div className='p-4 bg-gray-100 rounded-full'>
-                  <h1 className='ml-2 font-bold uppercase'>Detalhes do pedido</h1>
+                  <h1 className='ml-2 font-bold uppercase'>Order details</h1>
                 </div>
                 <div className='p-4'>
                   <div className='flex justify-between pt-4 border-b'>
@@ -155,13 +147,13 @@ const Cart = ({ categories, brands }) => {
                       Total
                     </div>
                     <div className='lg:px-4 lg:py-2 m-2 lg:text-lg font-bold text-center text-gray-900'>
-                      R$ {cart.cartTotal.toLocaleString('pt-br')}
+                      $ {cart.cartTotal}
                     </div>
                   </div>
                   <a href='#'>
                     <button className='flex justify-center items-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-gray-800 rounded-full shadow item-center hover:bg-gray-700 focus:shadow-outline focus:outline-none'>
                       <AiFillCreditCard size={28} />
-                      <span className='ml-2 mt-5px'>Fazer checkout</span>
+                      <span className='ml-2 mt-5px'>Checkout</span>
                     </button>
                   </a>
                 </div>
@@ -172,7 +164,7 @@ const Cart = ({ categories, brands }) => {
         {Object.keys(cart.items).length === 0 &&
         <div className='flex flex-col justify-center items-center'>
           <AiOutlineShoppingCart size={140}/>
-          <p className='text-2xl font-medium'>Seu carrinho esta vazio no momento</p>
+          <p className='text-2xl font-medium'>Your cart is empty</p>
         </div>
           
         }
