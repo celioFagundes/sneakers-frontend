@@ -96,9 +96,7 @@ const Products = ({ product, categories, brands }) => {
   const [isOnCart, setIsOnCart] = useState(false)
   const [colorAlternatives, setColorAlternatives] = useState([])
   const [similarProducts, setSimilarProducts] = useState([])
-  const [selectedVariation, setSelectedVariation] = useState(
-    product.variations[0],
-  )
+  const [selectedVariation, setSelectedVariation] = useState({})
 
   useEffect(() => {
     const getColorAlternatives = async () => {
@@ -123,10 +121,12 @@ const Products = ({ product, categories, brands }) => {
   const updateIsOnCartOnFocus = () => {
     const loadedCart = JSON.parse(localStorage.getItem('cart'))
     if (loadedCart) {
-      if (Object.keys(loadedCart).indexOf(selectedVariation.sku) >= 0) {
-        setIsOnCart(true)
-      } else {
-        setIsOnCart(false)
+      if (selectedVariation) {
+        if (Object.keys(loadedCart).indexOf(selectedVariation.sku) >= 0) {
+          setIsOnCart(true)
+        } else {
+          setIsOnCart(false)
+        }
       }
     }
   }
@@ -135,11 +135,10 @@ const Products = ({ product, categories, brands }) => {
     const newSelected = product.variations.filter(
       item => item.size === sizeSelected,
     )
+    console.log(newSelected)
     setSelectedVariation(newSelected[0])
   }
-  const initialSelectedVariation = () => {
-    setSizeSelected(product.variations[0].size)
-  }
+
   useEffect(() => {
     window.addEventListener('focus', updateIsOnCartOnFocus, { passive: true })
     updateIsOnCartOnFocus()
@@ -147,7 +146,6 @@ const Products = ({ product, categories, brands }) => {
       window.removeEventListener('focus', updateIsOnCartOnFocus)
     }
   })
-
 
   useEffect(() => {
     if (sizeSelected !== '') {
@@ -161,10 +159,15 @@ const Products = ({ product, categories, brands }) => {
   }, [selectedVariation, cart.items])
 
   useEffect(() => {
-    if (product.variations[0]) {
-      initialSelectedVariation()
-    }
+    setSizeSelected('')
+    setSelectedVariation(product.variations[0])
   }, [product])
+
+  const addToCart = () => {
+    if (selectedVariation && sizeSelected !== '') {
+      cart.addToCart(product, selectedVariation)
+    }
+  }
   const removeFromCart = () => {
     cart.removeFromCart(selectedVariation.sku)
   }
@@ -193,8 +196,9 @@ const Products = ({ product, categories, brands }) => {
               </p>
               <AddToCartButton
                 isOnCart={isOnCart}
-                addToCart={() => cart.addToCart(product, selectedVariation)}
+                addToCart={addToCart}
                 removeFromCart={removeFromCart}
+                sizeSelected = {sizeSelected}
                 product={product}
               />
             </div>
