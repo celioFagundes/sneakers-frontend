@@ -2,7 +2,7 @@ import React from 'react'
 
 const TopHeader = () => {
   return (
-    <div className='bg-darkBlack py-2 '>
+    <div className='bg-black py-2 '>
       <div className='container flex items-center justify-end'>
         <p className='
           mx-4

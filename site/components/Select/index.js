@@ -1,5 +1,6 @@
 import React from 'react'
 const Select = ({
+  
   placeholder = '',
   label,
   value,
@@ -12,13 +13,14 @@ const Select = ({
       className=' 
     flex items-center justify-start 
     relative
+    w-full md:w-fit
     
-    
-    mr-4 -sm my-2 py-1  
+    md:mr-4  my-2 py-1  
     border-y rounded-sm '
     >
       <select
         className='
+        text-center md:text-left
          block w-full 
         placeholder-gray-700
         text-gray-800  text-sm uppercase font-medium
@@ -37,6 +39,7 @@ const Select = ({
         </option>
 
         {options.map(opt => (
+          
           <option id={opt.id} key={opt.id} value={opt.slug}>
             {opt.name || opt.slug}
           </option>

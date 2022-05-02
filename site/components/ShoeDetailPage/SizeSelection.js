@@ -37,16 +37,22 @@ const SizeSelection = ({ sizeSelected, variations, setSizeSelected }) => {
             <button
               key={size}
               onClick={() => sizeIsAvailable(size) && setSizeSelected(size)}
+              style = {{
+                backgroundColor : sizeSelected === size && '#000'
+              }}
               className={`
-              bg-white   border border-gray-100 p-1   w-20  font-normal text-md 
+          
+              border-2 border-gray-100 
+              transition-all
+              p-1 w-20  
+             font-normal text-md 
               ${
-                sizeIsAvailable(size)
-                  ? 'bg-lightBlack text-white hover:bg-darkBlack'
-                  : ' text-black'
+                sizeIsAvailable(size) 
+                ? 'bg-lightBlack text-white hover:bg-gray-200'
+                : 'bg-white'
               } 
-            ${
-              sizeSelected === size && 'bg-black border-orange-400 rounded'
-            }`}
+            ${sizeSelected === size &&  'text-gray-50 border-orange-500 rounded'}
+              `}
             >
               {size}
             </button>

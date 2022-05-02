@@ -8,14 +8,14 @@ const Search = ({ showInput, handleShowInput }) => {
         className={`
                 text-black appearance-none 
                  top-28 
-                ${showInput ? 'right-0' : '-right-full'}
+                ${showInput ? 'right-5' : '-right-full'}
                 fixed md:static
                 transition-all
-                w-full md:w-max
+                w-11/12 md:w-max
                 md:bg-gray-200 bg-white
-                md:mr-3 px-2 py-1 
-                rounded-sm border-2 border-transparent 
-                focus:border-gray-600 focus:outline-none`}
+                md:mr-3 px-2 py-3 md:py-1 
+                rounded-sm border-2 md:border-transparent 
+                border-gray-600 focus:outline-none`}
         placeholder='search...'
       />
       <AiOutlineSearch

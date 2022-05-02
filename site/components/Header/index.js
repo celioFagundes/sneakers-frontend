@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Link from 'next/link'
 import { AiOutlineClose, AiOutlineHeart, AiOutlineMenu } from 'react-icons/ai'
@@ -6,6 +6,7 @@ import CartPreview from '../CartPreview'
 import NavItem from './NavItem'
 import Search from './Search'
 import TopHeader from './TopHeader'
+import useWindowDimensions from '../../lib/useWindowsDimensions'
 
 const Header = ({ categories, brands }) => {
   const [navbarShow, setNavbarShow] = useState(false)
@@ -13,6 +14,7 @@ const Header = ({ categories, brands }) => {
   const [menuCategoriesWomen, setMenuCategoriesWomen] = useState(false)
   const [showInput, setShowInput] = useState(false)
   const [hideOnScroll, setHideOnScroll] = useState(true)
+  const {width} = useWindowDimensions()
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
@@ -57,6 +59,21 @@ const Header = ({ categories, brands }) => {
     setMenuCategoriesWomen(false)
     setNavbarShow(false)
   }
+
+  useEffect(() =>{
+    if(!navbarShow ||  !showInput){
+      document.body.style.overflow ='initial'
+    }if(navbarShow ||  showInput){
+      document.body.style.overflow= 'hidden'
+    }
+    
+  },[navbarShow , showInput])
+  
+  useEffect(() =>{
+    if(width >= 786){
+      closeAllMenus()
+    }
+  },[width])
   return (
     <header
       className={`

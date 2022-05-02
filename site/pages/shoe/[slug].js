@@ -1,8 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { gql } from 'graphql-request'
 import Layout from '../../components/Layout'
 import { fetcher } from '../../lib/graphql'
-import { useEffect } from 'react/cjs/react.development'
 import { useCart } from '../../lib/CartContext'
 import Carousel from '../../components/Carousel/Carousel'
 import Description from '../../components/ShoeDetailPage/Description'
@@ -221,7 +220,6 @@ export async function getServerSideProps(context) {
   const { product } = await fetcher(GET_PRODUCT_BY_SLUG, {
     slug: context.query.slug,
   })
-  console.log(context.query)
   const { categories } = await fetcher(GET_ALL_CATEGORIES)
   const { brands } = await fetcher(GET_ALL_BRANDS)
 
