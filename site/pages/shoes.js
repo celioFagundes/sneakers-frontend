@@ -85,8 +85,6 @@ const Shoes = ({ products, categories, brands, query }) => {
     const brand = selectedBrand || ''
     const gender = selectedGender || ''
     const category = selectedCategory || ''
-
-    console.log('brand' + brand, 'cat' + category, 'gen' + gender)
     let newUrl = '/shoes?'
     if (brand) {
       newUrl += 'brand=' + brand + '&'
@@ -118,7 +116,6 @@ const Shoes = ({ products, categories, brands, query }) => {
    setFilterShown(false)
     const url = createURL()
     if (cursor) url += cursor
-    console.log('cursror ->>>', cursor)
     router.push(url)
   }
   const nextPage = () => {
