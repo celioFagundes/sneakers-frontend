@@ -69,7 +69,12 @@ const CartPreview = () => {
           className={`${
             Object.keys(cartDisplayed).length > 0 &&
             'h-52 sm:w-90 overflow-scroll'
-          } w-full  sm:w-auto absolute z-50 right-0 sm:right-12 top-24 bg-gray-50 px-3  py-3 rounded shadow-sm`}
+          } w-11/12  sm:w-auto 
+          absolute z-50 right-4 sm:right-12 
+          top-24 bg-white 
+          px-3  py-3 rounded 
+          border-2
+          shadow-sm`}
         >
           <div className='border-b flex flex-row items-center justify-between py-2'>
             <p className='text-gray-900 text-sm font-medium uppercase'>
