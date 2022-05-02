@@ -5,7 +5,7 @@ import React from 'react'
 const AdidasWomen = ({adidasWomenShoes}) => {
  
   return (
-    <section className='container mx-auto my-10 '>
+    <section className='container mx-auto my-10 px-5'>
       <h2 className='
       text-center md:text-left 
       uppercase font-kumbh-sans text-3xl text-darkBlack 

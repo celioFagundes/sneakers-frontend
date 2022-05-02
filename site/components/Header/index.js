@@ -115,6 +115,7 @@ const Header = ({ categories, brands }) => {
               />
             )}
             <Link href='/'>
+            
               <a
                 className='
               flex items-center
@@ -135,13 +136,13 @@ const Header = ({ categories, brands }) => {
             bg-white 
             text-base `}
           >
-            <NavItem label={'All'} url='/shoes' />
+            <NavItem label={'All'} url='/shoes' onClick={closeAllMenus}/>
             <NavItem.WithOptions
               label={'Men'}
               options={categories}
               isOpen={menuCategoriesMen}
               openOptions={openMenMenu}
-              closeOptions={setMenuCategoriesMen}
+              closeOptions={closeAllMenus}
               baseUrl={'/shoes?gender=Men&category='}
             />
             <NavItem.WithOptions
@@ -149,7 +150,7 @@ const Header = ({ categories, brands }) => {
               options={categories}
               isOpen={menuCategoriesWomen}
               openOptions={openWomenMenu}
-              closeOptions={setMenuCategoriesWomen}
+              closeOptions={closeAllMenus}
               baseUrl={'/shoes?gender=Women&category='}
             />
             <NavItem label={'Kids'} url='/shoes' />

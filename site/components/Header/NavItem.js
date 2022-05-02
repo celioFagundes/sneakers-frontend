@@ -3,11 +3,12 @@ import React from 'react'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import useWindowDimensions from '../../lib/useWindowsDimensions'
 
-const NavItem = ({ label, url }) => {
+const NavItem = ({ label, url ,onClick}) => {
   return (
     <div className='relative'>
       <Link href={url}>
         <a
+        onClick={onClick}
           className='
           inline-flex items-center  
           px-2 lg:px-4  py-4 lg:py-0
@@ -48,7 +49,7 @@ const NavItemWithOptions = ({
         {label}
       </button>
       <div
-        onMouseLeave={() => width > 1024 && closeOptions(false)}
+        onMouseLeave={() => width > 1024 && closeOptions()}
         className={`${
           isOpen ? 'fixed ' : 'hidden'
         } top-24 sm:top-24 left-0 sm:left-0 sm:right-0 
@@ -62,7 +63,7 @@ const NavItemWithOptions = ({
         <div className='
         flex items-center justify-start lg:justify-center 
         px-4 '>
-          <button onClick={() => closeOptions(false)} className='lg:hidden'>
+          <button onClick={() => closeOptions()} className='lg:hidden'>
             <AiOutlineArrowLeft size={20} />
           </button>
           <p className='
@@ -86,7 +87,7 @@ const NavItemWithOptions = ({
               px-4 
               hover:cursor-pointer hover:underline'
               key={option.id}
-              onClick={() => closeOptions(false)}
+              onClick={() => closeOptions()}
             >
               <Link href={`${baseUrl}${option.slug}`}>
                 <a className='font-medium text-gray-600 text-lg lg:text-sm'>

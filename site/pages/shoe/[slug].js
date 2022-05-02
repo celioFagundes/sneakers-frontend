@@ -131,12 +131,6 @@ const Products = ({ product, categories, brands }) => {
     }
   }
 
-  const setFirstAvailabledVariation = () => {
-    const firstAvailableVariation = product.variations.filter(
-      item => item.size === product.variations[0],
-    )
-    setSelectedVariation(firstAvailableVariation[0])
-  }
   const updateSelectedVariation = () => {
     const newSelected = product.variations.filter(
       item => item.size === sizeSelected,
@@ -144,7 +138,7 @@ const Products = ({ product, categories, brands }) => {
     setSelectedVariation(newSelected[0])
   }
   const initialSelectedVariation = () => {
-    setSelectedVariation(product.variations[0])
+    setSizeSelected(product.variations[0].size)
   }
   useEffect(() => {
     window.addEventListener('focus', updateIsOnCartOnFocus, { passive: true })
@@ -153,15 +147,13 @@ const Products = ({ product, categories, brands }) => {
       window.removeEventListener('focus', updateIsOnCartOnFocus)
     }
   })
-  useEffect(() => {
-    setFirstAvailabledVariation()
-  }, [])
+
 
   useEffect(() => {
     if (sizeSelected !== '') {
       updateSelectedVariation()
     }
-    //updateIsOnCartOnFocus()
+    updateIsOnCartOnFocus()
   }, [sizeSelected])
 
   useEffect(() => {
