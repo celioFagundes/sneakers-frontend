@@ -16,7 +16,7 @@ const Input = ({
       <div className='my-3 mr-2 bg-lightBlack py-3 px-3  w-full max-w-lg rounded-sm'>
         <div className='flex items-center w-full justify-start'>
           <label
-            className='uppercase min-w-fit text-primary text-xs font-medium mb-2 mr-3'
+            className='uppercase min-w-fit text-white text-xs font-medium mb-2 mr-3'
             htmlFor={'id-' + name}
           >
             {label}
@@ -92,7 +92,7 @@ const InputColor = ({
       <div className='my-3 mr-2 bg-lightBlack py-3 px-3  w-full max-w-lg rounded-sm'>
         <div className='flex items-center w-full justify-start'>
           <label
-            className='uppercase min-w-fit text-primary text-xs font-medium mb-2 mr-3'
+            className='uppercase min-w-fit text-white text-xs font-medium mb-2 mr-3'
             htmlFor={'id-' + colorName}
           >
             {label}
@@ -163,7 +163,7 @@ const InputTextArea = ({
   return (
     <div className='my-3 mr-2 bg-lightBlack py-3 px-3 rounded ? relative'>
       <label
-        className='block uppercase tracking-wide  text-primary text-xs font-bold mb-2'
+        className='block uppercase tracking-wide  text-white text-xs font-bold mb-2'
         htmlFor={name && 'id-' + name}
       >
         {label}
@@ -206,7 +206,7 @@ const InputVariation = ({
   return (
     <div className='mr-2 my-1 max-w-sm'>
       <label
-        className='block uppercase tracking-wide text-primary text-xs font-bold mb-2'
+        className='block uppercase tracking-wide text-white text-xs font-bold mb-2'
         htmlFor={'id-' + name}
       >
         {label}
@@ -248,7 +248,7 @@ const InputSearch = ({
       <div className='mr-2 bg-lightBlack  px-3  w-full max-w-lg rounded-sm'>
         <div className='flex items-center w-full justify-start'>
           <label
-            className='uppercase min-w-fit text-primary text-xs font-medium  mr-3'
+            className='uppercase min-w-fit text-white text-xs font-medium  mr-3'
             htmlFor={'id-' + name}
           >
             {label}

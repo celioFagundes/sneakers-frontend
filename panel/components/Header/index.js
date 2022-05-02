@@ -17,7 +17,7 @@ const router = useRouter()
     router.push('/')
   }
   return (
-    <header className='flex justify-between items-center py-2 px-6 bg-primary '>
+    <header className='flex justify-between items-center py-2 px-6 bg-lightBlack '>
       <div className='flex items-center lg:hidden'>
         <button
           onClick={openMenu}
@@ -28,7 +28,7 @@ const router = useRouter()
       </div>
       <div className='flex items-start justify-start px-6 '>
         
-        <img src={'/logo.svg'} />
+        <img src={'/logo-white.svg'} />
         <p className='text-white ml-2 font-medium'>ADMIN</p>
       </div>
       <div className='flex items-center justify-between'>

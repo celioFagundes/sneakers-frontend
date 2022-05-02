@@ -15,7 +15,7 @@ const Select = ({
   return (
     <div className='mr-4 max-w-sm mb-2 bg-lightBlack py-3 px-3 rounded-sm'>
       <label
-        className='block uppercase tracking-wide text-primary text-xs font-bold mb-2'
+        className='block uppercase tracking-wide text-white text-xs font-bold mb-2'
         htmlFor={'id-' + name}
       >
         {label}
@@ -68,7 +68,7 @@ const SingleValues = ({
   return (
     <div className='mr-4 max-w-sm mb-2'>
       <label
-        className='block uppercase tracking-wide text-primary text-xs font-bold mb-2'
+        className='block uppercase tracking-wide text-white text-xs font-bold mb-2'
         htmlFor={'id-' + name}
       >
         {label}
@@ -119,7 +119,7 @@ const SingleValuesHorizontal = ({
   return (
     <div className='flex items-center mr-4 max-w-sm'>
       <label
-        className='block uppercase tracking-wide text-primary text-xs font-bold mr-3'
+        className='block uppercase tracking-wide text-white text-xs font-bold mr-3'
         htmlFor={'id-' + name}
       >
         {label}

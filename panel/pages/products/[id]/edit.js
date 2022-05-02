@@ -388,7 +388,7 @@ const EditProduct = () => {
                   render={arrayHelpers => {
                     return (
                       <div className=''>
-                        <p className='text-primary font-medium text-lg'>Shoe Variations</p>
+                        <p className='text-white font-medium text-lg'>Shoe Variations</p>
                         <div className='my-1'>
                           <Button
                             type='button'

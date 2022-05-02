@@ -21,64 +21,64 @@ const ModalInfo = ({ item, closeFunction }) => {
               {item && (
                 <div className='text-white flex items-start justify-start flex-wrap ' >
                   <div className='lg:max-w-sm mr-3'>
-                    <p className='text-primary font-medium'>Name:</p>
+                    <p className='text-white font-medium'>Name:</p>
                     <span >{item.name}</span>
-                    <p className='text-primary font-medium'>Description:</p>
+                    <p className='text-white font-medium'>Description:</p>
                     <span className='break-all'>{item.description}</span>
-                    <p className='text-primary font-medium'>Price:</p>
+                    <p className='text-white font-medium'>Price:</p>
                     <span>{item.price}</span>
                     <div className='flex items-center justify-start'>
                       <div className='mr-4'>
-                        <p className='text-primary font-medium'>Brand:</p>
+                        <p className='text-white font-medium'>Brand:</p>
                         <span >{item.brand.name}</span>
                       </div>
                       <div>
-                        <p className='text-primary font-medium'>Category:</p>
+                        <p className='text-white font-medium'>Category:</p>
                         <span >{item.category.name}</span>
                       </div>
                     </div>
                     <div className='flex items-center justify-start'>
                       <div className='mr-4'>
-                        <p className='text-primary font-medium'>Gender:</p>
+                        <p className='text-white font-medium'>Gender:</p>
                         <span >{item.gender}</span>
                       </div>
                       <div className='mr-4'>
-                        <p className='text-primary font-medium'>Material:</p>
+                        <p className='text-white font-medium'>Material:</p>
                         <span >{item.material}</span>
                       </div>
                       <div>
-                        <p className='text-primary font-medium'>Color:</p>
+                        <p className='text-white font-medium'>Color:</p>
                         <span >{item.color.colorName}</span>
                       </div>
                     </div>
-                    <p className='text-primary font-medium'>Slug:</p>
+                    <p className='text-white font-medium'>Slug:</p>
                     <span>{item.slug}</span>
                   </div>
                   <div >
-                    <p className='text-primary font-medium'>Variations:</p>
+                    <p className='text-white font-medium'>Variations:</p>
                     {Object.keys(item.variations).map(variation => (
                       <div key = {variation} className='flex items-center justify-between mb-3 border-b border-gray-600 pb-2'>
                         <div className='mr-3'>
-                          <p className='text-primary font-medium'>SKU:</p>
+                          <p className='text-white font-medium'>SKU:</p>
                           <span >
                             {item.variations[variation].sku}
                           </span>
                         </div>
 
                         <div className='mr-3'>
-                          <p className='text-primary font-medium'>Size:</p>
+                          <p className='text-white font-medium'>Size:</p>
                           <span >
                             {item.variations[variation].size}
                           </span>
                         </div>
                         <div className='mr-3'>
-                          <p className='text-primary font-medium'>Weight:</p>
+                          <p className='text-white font-medium'>Weight:</p>
                           <span >
                             {item.variations[variation].weight}
                           </span>
                         </div>
                         <div className='mr-3'>
-                          <p className='text-primary font-medium'>Stock:</p>
+                          <p className='text-white font-medium'>Stock:</p>
                           <span>
                             {item.variations[variation].stock}
                           </span>

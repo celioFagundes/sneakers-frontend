@@ -35,9 +35,10 @@ const DELETE_PRODUCT = `
     panelDeleteProduct(id : $id)
   }
 `
-const GET_ALL_PRODUCTS = `
+
+const GET_ALL_PRODUCTS_NO_FILTER = `
   query{
-  getAllProducts{
+  getAllProductsNoFilter{
     id
     name
     slug
@@ -66,7 +67,7 @@ const GET_ALL_PRODUCTS = `
 }`
 
 const Products = () => {
-  const { data, error, mutate } = useQuery(GET_ALL_PRODUCTS)
+  const { data, error, mutate } = useQuery(GET_ALL_PRODUCTS_NO_FILTER)
   const [deleteData, deleteProduct] = useMutation(DELETE_PRODUCT)
   const [displayData, setDisplayData] = useState([])
   const [genderSelected, setGenderSelected] = useState('All')
@@ -97,8 +98,8 @@ const Products = () => {
     fn(e.target.value)
   }
   useEffect(() => {
-    if (data && data.getAllProducts) {
-      setDisplayData(data.getAllProducts)
+    if (data && data.getAllProductsNoFilter) {
+      setDisplayData(data.getAllProductsNoFilter)
     }
   }, [data])
 
@@ -125,8 +126,8 @@ const Products = () => {
   }
 
   useEffect(() => {
-    if (data && data.getAllProducts) {
-      let filteredList = data.getAllProducts
+    if (data && data.getAllProductsNoFilter) {
+      let filteredList = data.getAllProductsNoFilter
       filteredList = filterByBrand(filteredList)
       filteredList = filterByCategory(filteredList)
       filteredList = filterByGender(filteredList)
