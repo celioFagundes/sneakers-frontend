@@ -39,7 +39,6 @@ const Index = () => {
   })
   useEffect(() => {
     let timer = setInterval(() => {
-      console.log('running timer')
       if (
         localStorage.getItem('refreshToken') &&
         localStorage.getItem('accessToken')
