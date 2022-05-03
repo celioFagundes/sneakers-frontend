@@ -1,89 +1,63 @@
-# DevShop painel administrativo  em NextJS
-- Acesse o repositório da API Backend do DevShop [API DevShop](https://github.com/celioFagundes/devshop-api)
-- Acesse o repositório do site do DevShop [Site](https://github.com/celioFagundes/devshop-frontend/tree/master/site).
+# Sneakers e-commerce admin panel
+- Backend NestJS API repository [API Sneakers](https://github.com/celioFagundes/sneakers-api)
+- Nextjs Website [Website](https://github.com/celioFagundes/sneakers-frontend/tree/master/site)
 
-### Pagina inicial do Painel Admnistrativo do DevShop
-![localhost_3001_dashboard](https://user-images.githubusercontent.com/77676047/159090336-06e187fc-179c-4948-9618-d3f41d0cc164.png)
+### Products page
+![panel-products](https://user-images.githubusercontent.com/77676047/166339465-d5992ab5-3611-47d5-bc42-b5300dc6fe04.png)
 
-### Sobre o projeto
-  Projeto DevShop , criação e gerenciamento de produtos utilizando NextJs, NestJs, Typescript, Javascript, TypeORM ,Postgres e AWS S3. Este é um projeto FullStack que conta com  3 repositórios :
-  - Painel administrativo desenvolvido com NextJs para criação e gerenciamento dos produtos, incluindo cadastro e validação dos usuários que possuem permissão para usar o painel utilizando JWT Tokens e inserção de imagens dos produtos e marcas utilizando AWS S3.  
-  - Uma API Backend desenvolvida com NestJs, Typescript , GraphQL, TypeORM , Postgres e AWS S3.
-    - Acesse o repositório da API Backend do DevShop [API DevShop](https://github.com/celioFagundes/devshop-api)
-  - Site DevShop, com exibição dos produtos, marcas e categorias cadastrados, com opções de escolha dos produtos de acordo com o tamanho ou tensão elétrica  
-    - Acesse o repositório do site do DevShop [Site](https://github.com/celioFagundes/devshop-frontend/tree/master/site).
-
-### Sobre o painel administrativo do DevShop
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-Desenvolvido com NextJs e GraphQL, consiste no gerenciamento dos produtos, categorias e marcas do DevShop armazenados no banco de dados Postgres. 
-</br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-Permite a criação, edição e remoção de todos os produtos, categorias e marcas e também permite o upload de imagens dos produtos e de logos para as marcas
-Gerenciamento dos usuários que possuem acesso ao painel, como criação, edição e remoção do usuário, assim como  a visualização e invalidação  das sessôes de cada usuário 
-</br>
-
-### Funcionalidades
-- Criação, edição e remoção dos produtos, marcas e categorias cadastrados no banco de dados
-- Criação, edição e remoção dos usuarios que possuem acesso ao painel
-- Autorização de ações do usuário baseada em sua role sendo elas administrador ou usuário
-- Visualização e invalidação das sessoôes de cada usuário 
-- Criação, edição e remoção de variações do produto. como tamanho para roupas(exemplo: P,M,G, 38,40) ou tensão elétrica para eletrônicos(110V, 120V ou Bivolt)
-- Validação de todos os formulários de criação e edição utilizando Formik e Yup
-
-### Tecnologias utilizadas
+### About the project
+  Sneakers e-commerce is a javascript Fullstack project where you can create, manage and control products, focusing on shoes and sneakers. The project features a admin panel and website made with NextJs and a backend API made with NestJS
+  
+  ### Technologies used in this project
 - [NextJs](https://nextjs.org/) 
+- [NestJs](https://nestjs.com/) 
+- [Postgres](https://www.postgresql.org/)
+- [Heroku](https://id.heroku.com/login)
+- [Vercel](https://vercel.com/dashboard)
+- [TypeORM](https://docs.nestjs.com/recipes/sql-typeorm)
 - [GraphQl](https://graphql.org/) 
+- [AWS S3](https://aws.amazon.com/pt/)
 - [useSWR](https://swr.vercel.app/)
 - [TailwindCSS](https://tailwindcss.com/)
+- [Embla Carousel](https://www.embla-carousel.com/)
+- [Sharp](https://github.com/lovell/sharp)
 - [Formik](https://formik.org/)
 - [Yup](https://github.com/jquense/yup)
 - [DateFns](https://date-fns.org/)
 - [React Icons](https://react-icons.github.io/react-icons)
-- [Recharts](https://recharts.org/en-US/)
 
-### Desempenho
-- Responsividade em dispostivos movéis
+### Repositories
+- Website: Display and selection of all products,categories and brands registered on the postgres database. 
+  - Website [Website](https://github.com/celioFagundes/sneakers-frontend/tree/master/site).
+- Backend API developed using NestJs , Typescript , GraphQL, TypeORM , Postgres e AWS S3.
+  - Backend API [API sneakers](https://github.com/celioFagundes/sneakers-api)
+- Admin panel developed using  NextJs for creation and management of all products, categories,brand and users, including user register and validation using JWT Tokens, AWS S3 used for storing  product images and brand logos.  
+  
 
-## Paginas
-### Pagina inicial do DevShop
-Informações gerais(dados ficitios apenas para exemplo)
-![localhost_3001_dashboard](https://user-images.githubusercontent.com/77676047/159090336-06e187fc-179c-4948-9618-d3f41d0cc164.png)
+### About the admin panel
 
-### Pagina inicial das abas
-- Categorias
-![localhost_3001_users](https://user-images.githubusercontent.com/77676047/159092821-345f4afc-b242-41fa-a60a-818a09793b5a.png)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Developed with  NextJs, TailwindCSS and GraphQL, let's the user create, edit, remove and manage  all products, categories, brands and  register them on the postgres database
+</br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+The shoes page show all shoes registered on the database and let's the user filter by name, category, brand and gender. The user can access the create, edit and upload images pages, see all details about a product and also delete a product
+![panel-products](https://user-images.githubusercontent.com/77676047/166339465-d5992ab5-3611-47d5-bc42-b5300dc6fe04.png)
 
-- Produtos
-![localhost_3001_users (1)](https://user-images.githubusercontent.com/77676047/159092869-63606b59-dda1-4ee6-83d5-4dad3c275fe2.png)
+The categories page show all categories registered on the database. The user can access the create and edit pages, and also delete a category
+![panel-categories](https://user-images.githubusercontent.com/77676047/166339991-9d8b4dba-a986-4f96-a2f8-ca9b445e72cd.png)
 
-- Marcas
-![localhost_3001_users (2)](https://user-images.githubusercontent.com/77676047/159092903-0e764ae3-86b5-4cab-8f09-69a0f67464ea.png)
+The brands page show all brands registered on the database. The user can access the create and edit pages, and also delete a brand. The user can upload a logo image for the brand
+![panel-brands](https://user-images.githubusercontent.com/77676047/166340184-16e0c1e3-caa8-45ec-bc95-887f9096ba3f.png)
 
-- Usuários
-![localhost_3001_users (3)](https://user-images.githubusercontent.com/77676047/159092936-fd12c364-fe34-4615-955a-61dc1b785b37.png)
+The users page show all users registered on the database. The page is only accessible for admin users . The admin user can access the create, edit, change password and sessions pages. The admin user can  delete a user or invalidate a user session
+![panel-user](https://user-images.githubusercontent.com/77676047/166340466-969ee65b-32d1-4782-8576-eaabfc0bdf19.png)
 
-### Pagina de criação/edição das abas (apenas o texto do botão muda na página de edição)
-- Categorias
-![localhost_3001_users (4)](https://user-images.githubusercontent.com/77676047/159093224-da66cac6-e295-4cd8-97b9-1b0553072ed6.png)
+Login page
+![panel-login](https://user-images.githubusercontent.com/77676047/166340776-e23d2a7e-06cc-4ba6-8479-34832b43183d.png)
 
-- Produtos(formulário
-![formproduct](https://user-images.githubusercontent.com/77676047/159095332-83875e96-4105-4c82-9ffd-0fba3d7e696b.png)
 
-- Marcas
-![localhost_3001_users (6)](https://user-images.githubusercontent.com/77676047/159093344-d0dd6a50-bb98-43bb-839b-61a270fd6ea1.png)
-
-- Usuários
-![localhost_3001_users (7)](https://user-images.githubusercontent.com/77676047/159093378-9fcb8f9a-4219-409c-803d-c65673cf615b.png)
-
-### Upload de imagens dos produtos
-![localhost_5000_products_create (1)](https://user-images.githubusercontent.com/77676047/159095435-46e2cdf9-49d6-4497-93d0-b159a5a898da.png)
-
-### Sessões do usuário
-![localhost_5000_products_create (2)](https://user-images.githubusercontent.com/77676047/159095489-09566abd-c001-4a5d-b31b-9d6d1542bcd5.png)
-
-### Página de Login
-![localhost_3001_ (1)](https://user-images.githubusercontent.com/77676047/159259749-af558af0-df28-4cab-8bef-53f613385223.png)
+### Performance
+- Responsiveness on mobile devices
 
 
 
