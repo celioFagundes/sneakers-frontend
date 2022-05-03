@@ -12,7 +12,7 @@ const AdKD14 = () => {
     relative
     w-full h-max  
     my-5 md:my-20'>
-      <CarouselSingle slides = {images}/>
+      <CarouselSingle slides = {images} productName ='Adidas KD14 Black/Lime'/>
       <div
         className=' 
         h-full w-full 
@@ -41,7 +41,7 @@ const AdKD14 = () => {
           The KD14 is designed to help versatile, relentless players like KD
           feel fresh all game.
         </p>
-        <Link href={'/shoe/kd-14-black-lime'}>
+        <Link href={'/shoe/kd-14-black-lime'} passHref>
           <div
             className='
                 w-max 

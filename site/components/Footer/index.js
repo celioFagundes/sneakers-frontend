@@ -21,33 +21,33 @@ const Footer = () => {
             <ul className='flex flex-col md:flex-row items-center justify-between'>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2 flex items-center'>
                 <FaMapMarkerAlt className='mr-2' />
-                <a href='#'>USA</a>
+                <a href='/' name ='Choouse your location'>USA</a>
               </li>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
-                <a href='#'>Privacy polices</a>
+                <a href='/' name ='Go to privacy polices page'>Privacy polices</a>
               </li>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
-                <a href='#'>Terms and conditions</a>
+                <a href='/' name ='Go to terms and conditions page'>Terms and conditions</a>
               </li>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
-                <a href='#'>Products</a>
+                <a href='/' name ='Go to products page'>Products</a>
               </li>
               <li className='text-white uppercase font-kumbh-sans text-xs md:mr-4 mb-2'>
-                <a href='#'>Support</a>
+                <a href='/' name ='Go to support page'>Support</a>
               </li>
             </ul>
           </nav>
         </div>
         <div className=''>
           <div className='flex items-center justify-center md:justify-start pb-10'>
-            <a href='#' className='mr-3'>
+            <a href='/' className='mr-3' name ='To facebook'>
               <AiFillFacebook color='#fff' size={22} />
             </a>
-            <a href='#' className='mr-3'>
-              <AiOutlineTwitter color='#fff' size={22} />
+            <a href='/' className='mr-3'>
+              <AiOutlineTwitter color='#fff' size={22} name ='To twitter'/>
             </a>
-            <a href='#'>
-              <AiOutlineInstagram color='#fff' size={22} />
+            <a href='/'>
+              <AiOutlineInstagram color='#fff' size={22} name ='To instagram'/>
             </a>
           </div>
           <p className='text-lightGray text-xs uppercase font-kumbh-sans'>

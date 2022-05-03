@@ -10,7 +10,7 @@ import AddToCartButton from '../../components/ShoeDetailPage/AddToCartButton'
 import SizeSelection from '../../components/ShoeDetailPage/SizeSelection'
 import ColorAlternatives from '../../components/ShoeDetailPage/ColorAlternatives'
 import ShoeTitle from '../../components/ShoeDetailPage/ShoeTitle'
-
+import Seo from '../../components/Seo'
 const GET_ALL_CATEGORIES = gql`
   query {
     categories: getAllCategories {
@@ -135,7 +135,6 @@ const Products = ({ product, categories, brands }) => {
     const newSelected = product.variations.filter(
       item => item.size === sizeSelected,
     )
-    console.log(newSelected)
     setSelectedVariation(newSelected[0])
   }
 
@@ -173,11 +172,12 @@ const Products = ({ product, categories, brands }) => {
   }
   return (
     <Layout categories={categories} brands={brands}>
+      <Seo  title = {`Sneakers | ${product.name}`}/>
       {selectedVariation && (
         <div className='text-center lg:text-left lg:px-5  mx-auto md:pt-28'>
           <div className='flex flex-wrap '>
             <div className='w-full lg:w-1/2'>
-              <Carousel slides={product.images} />
+              <Carousel slides={product.images} productName = {product.name}/>
             </div>
             <div className='lg:w-1/2 w-full px-2 lg:pl-10 lg:py-2  mt-6 lg:mt-0 border-b-2 border-gray-200 '>
               <ShoeTitle product={product} />

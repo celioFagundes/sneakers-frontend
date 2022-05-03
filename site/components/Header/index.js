@@ -122,7 +122,7 @@ const Header = ({ categories, brands }) => {
               title-font font-medium  text-gray-900 
               ml-4 '
               >
-                <img src='/logo.svg' />
+                <img src='/logo.svg' alt = 'sneakers'/>
               </a>
             </Link>
           </div>

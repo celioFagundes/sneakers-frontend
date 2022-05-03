@@ -15,6 +15,7 @@ const AddToCartButton = ({
           isOnCart ? (
             <button
               onClick={removeFromCart}
+              name ='Remove from cart'
               className='
             w-full sm:w-60 
             my-3 sm:my-0
@@ -30,6 +31,7 @@ const AddToCartButton = ({
           ) : (
             <button
               onClick={addToCart}
+              name = 'Add to cart'
               className='
             w-full sm:w-60 
             my-3 sm:my-0
@@ -45,6 +47,7 @@ const AddToCartButton = ({
           )
         ) : (
           <button
+          name ='Select a size'
           disabled  = {sizeSelected === ''}
             className='
       w-full sm:w-60 
@@ -60,7 +63,7 @@ const AddToCartButton = ({
           </button>
         )}
         <button
-        
+        name='Add to favorites'
           className='
       p-2 ml-1
       border-2 border-darkBlack 

@@ -32,7 +32,7 @@ const Intro = () => {
           <p className='text-white sm:text-3xl text-2xl uppercase font-kumbh-sans  mb-4'>
             Nike collection
           </p>
-          <Link href={'/shoes?brand=nike'}>
+          <Link href={'/shoes?brand=nike'} passHref>
             <div
               className='
                 w-max 
@@ -75,7 +75,7 @@ const Intro = () => {
           <p className='text-white  sm:text-3xl text-2xl uppercase font-kumbh-sans  mb-4 '>
             Adidas Collection{' '}
           </p>
-          <Link href={'/shoes?brand=adidas'}>
+          <Link href={'/shoes?brand=adidas'} passHref>
             <div
               className='
                 w-max 

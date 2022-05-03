@@ -13,7 +13,7 @@ const ColorAlternatives = ({alternatives, product}) => {
               className='static   w-20 mr-5 px-2 lg:px-0'
             >
               <p className='text-xs italic '>{alternative.color.colorName}</p>
-              <Link href={`/shoe/${alternative.slug}`}>
+              <Link href={`/shoe/${alternative.slug}`} passHref>
                 <div className='border border-transparent hover:border-darkBlack transition-all cursor-pointer rounded-xs shadow'>
                   <Image
                     src={alternative.images[0]}

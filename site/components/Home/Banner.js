@@ -6,7 +6,7 @@ const Banner = () => {
     <div>
       <div className='bg-darkBlack w-full '>
         <div className='container mx-auto py-20 flex items-center justify-center'>
-          <Link href={'/shoes'}>
+          <Link href={'/shoes'} passHref>
             <div
               className='
               flex items-center justify-start 
@@ -29,7 +29,7 @@ const Banner = () => {
           text-center
           py-20 '
         >
-          <Link href={'#'}>
+          <Link href={'/'} passHref>
             <div
               className='
                 flex items-center justify-start 

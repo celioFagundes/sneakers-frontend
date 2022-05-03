@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-const CardProduct = ({ item }) => {
+const CardProduct = ({ item, priority }) => {
   return (
     <div className='relative  mb-10  md:mr-12 '>
       <figure className='relative h-450 w-full '>
@@ -9,6 +9,7 @@ const CardProduct = ({ item }) => {
           alt={item.name}
           layout='fill'
           objectFit='cover'
+          priority={priority}
         />
       </figure>
       <div
@@ -18,7 +19,7 @@ const CardProduct = ({ item }) => {
       bg-darkBlack bg-opacity-5'
       ></div>
       <div className=' absolute -bottom-5 left-0 w-full'>
-        <Link href={`/shoe/${item.slug}`}>
+        <Link href={`/shoe/${item.slug}`} passHref>
           <div
             className='
                 w-full

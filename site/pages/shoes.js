@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 import { FaSort } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai'
 import useWindowDimensions from '../lib/useWindowsDimensions'
+import Seo from '../components/Seo'
 const genderOptions = [
   { id: 'MEN', slug: 'Men' },
   { id: 'WOMEN', slug: 'Women' },
@@ -128,6 +129,7 @@ const Shoes = ({ products, categories, brands, query }) => {
   }
   return (
     <Layout categories={categories} brands={brands}>
+      <Seo  title = 'Sneakers | Search a shoe'/>
       <div
         className='
         container mx-auto  
@@ -216,8 +218,8 @@ const Shoes = ({ products, categories, brands, query }) => {
                 No products were found matching your selection
               </p>
             )}
-            {products.data?.map(product => (
-              <CardProduct item={product} key={product.id} />
+            {products.data?.map((product, index) => (
+              <CardProduct item={product} key={product.id} priority = {index === 0}/>
             ))}
           </div>
         </div>
