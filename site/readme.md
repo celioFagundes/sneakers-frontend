@@ -1,5 +1,5 @@
 # Sneakers e-commerce
-- To access the website [Website](https://sneakers-ecommerce-site.vercel.app/)
+- To access the website [Website](https://sneakers-ecommerce-site.vercel.app/), due to inactivity the page may throw a 503 error until the server starts again, wait a second and reload the page
 - Backend NestJS API repository [API Sneakers](https://github.com/celioFagundes/sneakers-api)
 - Nextjs Admin panel [Admin Panel](https://github.com/celioFagundes/sneakers-frontend/tree/master/panel).
 
